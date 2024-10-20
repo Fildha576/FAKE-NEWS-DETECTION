@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Changed font style */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Center vertically */
+            margin: 0;
+            background-color: black; /* Black background for the entire page */
+        }
+        #login-form {
+            border: 3px solid #eeea0f; /* Bolder red border */
+            padding: 40px; /* Increased padding for larger margin */
+            border-radius: 10px;
+            background-color: #df0b0b; /* Dark red background for the form */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5); /* Shadow effect */
+            color: white; /* White text color inside the form */
+            min-width: 300px; /* Minimum width for the form */
+            min-height: 400px; /* Minimum height for the form */
+        }
+        h2 {
+            text-align: center; /* Centered heading */
+            font-weight: 700; /* Bold font weight */
+            font-size: 2em; /* Larger font size */
+            font-style: italic; /* Italic font style */
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            text-align: center; /* Centered label text */
+            color: white; /* White text for labels */
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #fff; /* White border */
+            border-radius: 5px; /* Rounded corners */
+            background-color: #cc0000; /* Darker light red background for inputs */
+            color: white; /* White text for inputs */
+        }
+        input[type="submit"] {
+            margin-top: 30px; /* Increased space before the submit button */
+            padding: 10px;
+            cursor: pointer;
+            border: none; /* Remove default border */
+            border-radius: 5px; /* Rounded corners */
+            background-color: #000; /* Black background */
+            color: white; /* White text */
+            width: 80%; /* Decreased width */
+            transition: background-color 0.3s; /* Smooth transition */
+            font-weight: 700; /* Bold font weight for the button */
+        }
+        input[type="submit"]:hover {
+            background-color: #333; /* Dark gray on hover */
+        }
+        input[type="submit"]:active {
+            background-color: #111; /* Even darker gray on click */
+        }
+        a {
+            display: block;
+            margin-top: 15px;
+            text-align: center; /* Centered link text */
+            color: white; /* White link color */
+            text-decoration: none; /* Remove underline */
+        }
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+<body>
+    <form id="login-form" method='post'>
+        {% csrf_token %}
+        <h2>LOGIN</h2>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="Username" placeholder="Username" required>
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" value="Login">
+        
+        <a href="/reg/">If you haven't registered, Register Now</a>
+    </form>
+</body>
+</html>
